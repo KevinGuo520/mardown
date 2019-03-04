@@ -40,3 +40,46 @@ grammar_cjkRuby: true
 
 #### 2.3安装Linux前的规划
 
+加入强制使用 GPT 分区表的安装参数
+> 如前所述，如果磁盘容量小于 2TB 的话，系统默认会使用 MBR 模式来安装！鸟哥的虚拟机仅有 40GB 的磁盘容量，所以
+默认肯定会用 MBR 模式来安装的啊！那如果想要强制使用 GPT 分区表的话，你就得要这样作：
+
+> 1. 使用方向键，将下图的光标移动到“ Install CentOS 7 ”的项目中
+> 2. 按下键盘的 [Tab] 按钮，让光标跑到画面最下方等待输入额外的核心参数
+> 3. 在出现的画面中，输入如下画面的数据 （注意，各个项目要有空格，最后一个是光标本身而非底线）
+> 
+其实重点就是输入“ **inst.gpt** ”这个关键字！
+![enter description here](./images/1551714551089.png)
+
+软件选择
+![enter description here](./images/1551714786301.png)
+
+###### 磁盘分区与文件系统设置
+![](./images/1551714919283.png)
+
+![enter description here](./images/1551715186716.png)
+![enter description here](./images/1551715224070.png)
+> 由于是 bios 使用，因此没有挂载点 （你看画面中该字段是空空
+如也的！）。 同时文件系统的字段部份也是会变成“BIOS Boot”的关键字！并不会是 Linux 的文件系统啦！
+
+> BIOS Boot：就是 GPT 分区表可能会使用到的项目，若你使用 MBR 分区，那就不需要这个项目了！
+
+
+![enter description here](./images/1551715307764.png)
+![enter description here](./images/1551715352562.png)
+![enter description here](./images/1551715419275.png)
+![](./images/1551715460908.png)
+> 填入“ 30G ”左右的容量，这样我们就还有剩下将近 10G 的容量可以继续未来的章节内容练习
+
+![enter description here](./images/1551715508368.png)
+![enter description here](./images/1551715567260.png)
+![enter description here](./images/1551715593582.png)
+> swap 是当实体内存容量不够用时，可以拿这个部份来存放内存中较少被使用的程序项目。
+
+#### Tips:
+> swap内存交换空间的功能是：
+> 当有数据被存放在实体内存里面，但是这些数据又不是常被CPU所取用时， 那么这些不常被使用的程序将会被
+丢到硬盘的swap交换空间当中， 而将速度较快的实体内存空间释放出来给真正需要的程序使用！ 所以，如果你的系统不很忙，而内存又很
+大，自然不需要swap啰。
+
+![enter description here](./images/1551715757223.png)
