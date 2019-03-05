@@ -120,9 +120,17 @@ grammar_cjkRuby: true
 > “/” 根目录和"swap"目录
 
 2. 默认使用 MBR 分区方式的情况下，在第二颗 SATA 磁盘中，分区“六个有用”的分区 （具有 filesystem 的） ，此外，已知有两个 primary 的分区类型！请问六个分区的文件名？
+**a:： 第一块硬盘。如果是第二块硬盘，则为b，依此类推c,d……**
 > /dev/sdb1(primary)
 > /dev/sdb2(primary)
 > /dev/sdb3(extends)
-> /dev/sdb4(4-6 为 logical)
+> /dev/sdb4(4-8 为 logical)
 > /dev/sdb5
 > /dev/sdb6
+> /dev/sdb7
+> /dev/sdb8
+> **其中 拓展分区3 = 逻辑分区4-8的和**
+
+磁盘容量与主分区、扩展分区、逻辑分区的关系:
+> 硬盘的容量＝主分区的容量＋扩展分区的容量
+> 扩展分区的容量＝各个逻辑分区的容量之和
