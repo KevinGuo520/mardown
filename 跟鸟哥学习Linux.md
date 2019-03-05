@@ -89,10 +89,9 @@ grammar_cjkRuby: true
 > 可以发现方框圈起来的地方，删除了 MSDOS 而创建了 GPT 
 
 ##### 核心管理与网络设置
-> 点选“系统”下的“KDUMP”项目，这个项目主要在处理，当 Linux 系统因为核心问题导致的死机事
+> （慎用）点选“系统”下的“KDUMP”项目，这个项目主要在处理，当 Linux 系统因为核心问题导致的死机事
 件时， 会将该死机事件的内存内数据储存出来的一项特色！
 
-![enter description here](./images/1551749035459.png)
 ![enter description here](./images/1551749064930.png)
 > 这边使用的是虚拟机，因此看到的网卡就会是旧式的 eth0 之类的网卡代号。如果是实体网卡，那你可能会看到类似 p1p1, em1 等等比较特殊的网卡代号！
 
@@ -108,4 +107,10 @@ grammar_cjkRuby: true
 ![enter description here](./images/1551749389502.png)
 ![enter description here](./images/1551749441710.png)
 > 刚刚上面所选择的项目，包括 root 的密码等等，通通都会被纪录到 /root/anaconda-ks.cfg 这个文件内
-> 
+
+##### 注意：
+
+ - 尽量使用一般用户来操作Linux，有必要再转身份成为root即可。
+ - 即使是练习机，在创建 root 密码时，建议依旧能够保持良好的密码规则，不要随便设置！
+ - CentOS 7默认使用 xfs 作为文件系统
+ - 设置时不要选择启动kdump，因为那是给核心开发者查阅死机数据的；
