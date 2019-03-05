@@ -114,3 +114,15 @@ grammar_cjkRuby: true
  - 即使是练习机，在创建 root 密码时，建议依旧能够保持良好的密码规则，不要随便设置！
  - CentOS 7默认使用 xfs 作为文件系统
  - 设置时不要选择启动kdump，因为那是给核心开发者查阅死机数据的；
+
+##### 习题:
+1. Linux的目录配置以“树状目录”来配置，至于磁盘分区（partition）则需要与树状目录相配合！ 请问，在默认的情况下，在安装的时候系统会要求你一定要分区出来的两个Partition是哪两个?
+> “/” 根目录和"swap"目录
+
+2. 默认使用 MBR 分区方式的情况下，在第二颗 SATA 磁盘中，分区“六个有用”的分区 （具有 filesystem 的） ，此外，已知有两个 primary 的分区类型！请问六个分区的文件名？
+> /dev/sdb1(primary)
+> /dev/sdb2(primary)
+> /dev/sdb3(extends)
+> /dev/sdb4(4-6 为 logical)
+> /dev/sdb5
+> /dev/sdb6
