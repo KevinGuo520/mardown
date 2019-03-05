@@ -55,6 +55,7 @@ grammar_cjkRuby: true
 ![enter description here](./images/1551714786301.png)
 
 ###### 磁盘分区与文件系统设置
+> 注意要使用中文键盘
 ![](./images/1551714919283.png)
 
 ![enter description here](./images/1551715186716.png)
@@ -141,3 +142,59 @@ grammar_cjkRuby: true
 
 总结：
 > Linux 中规定，每一个硬盘设备最多能有 4 个主分区（其中包含扩展分区）构成，任何一个扩展分区都要占用一个主分区号码，也就是在一个硬盘中，主分区和扩展分区一共最多是 4 个。
+
+补充：
+> MBR 是英文Master Boot Record的缩写，中文意为主引导记录。硬盘的0磁道的第一个扇区称为MBR，它的大小是512字节，而这个区域可以分为两个部分。第一部分为pre- boot区（预启动区），占446字节；第二部分是Partition table区（分区表），占66个字节，该区相当于一个小程序，作用是判断哪个分区被标记为活动分区，然后去读取那个分区的启动区，并运行该区中的代码。
+
+#### 首次登陆CentOS 7.x图形接口
+> 建议：
+> 一般来说，我们不建议您直接使用 root 的身份登陆系统喔！请使用一般帐号登陆！等到有需要修改或者是创建系统相关的管理工作时， 才切换身份成为 root！为什么呢？因为系统管理员的权限太高了！而 Linux 下面很多的指令行为是“没有办法复原”的！所以， 使用一般帐号时，“手滑”的灾情会比较不严重！
+
+Tips:
+> 关于“个人数据夹”的内容，记得我们之前说过Linux是多用户多任务的操作系统吧？ 每个人都会有自己的“工作目录”，这个目录是使用者可以完全掌控的， 所以就称为“使用者个人主文件夹”了。一般来说，主文件夹都在/home下面， 以鸟哥这次的登陆为例，我的帐号是dmtsai，那么我的主文件夹就应该在/home/dmtsai/啰！
+
+
+#### 终端
+
+**[dmtsai@study ~]$**
+> ~ 符号代表的是“使用者的主文件夹”的意思，他是个“变量！” 这相关的意义我们会在后续的章节依序介绍到。举例来说，root的
+主文件夹在/root， 所以 ~ 就代表/root的意思。而dmtsai的主文件夹在/home/dmtsai， 所以如果你以dmtsai登陆时，他看到的 ~ 就会
+等于/home/dmtsai喔！
+
+在Linux当中，默认root的提示字符为 # ，而一般身份使用者的提示字符为 $
+
+**强烈建议你创建一个普通的帐号来供自己平时使用喔！**
+
+-  登出系统
+	**[dmtsai@study ~]$ exit**
+> > “离开系统并不是关机！” 
+基本上，Linux本身已经有相当多的工作在进行，你的登陆也
+仅是其中的一个“工作”而已， 所以当你离开时，这次这个登陆的工作就停止了，但此时Linux其他的工作是还是继续在进行的！
+
+- 指令初识
+>> - 不论空几格 shell 都视为一格。所以空格是很重要的特殊字符！；
+>> - [Enter]按键代表着一行指令的开始启动。
+>> - 指令太长的时候，可以使用反斜线 （\） 来跳脱[Enter]符号，使指令连续到下一行。注意！反斜线后就立刻接特殊字符，才能
+跳脱！
+------
+#### 基础指令的操作
+
+- 显示日期与时间的指令： date
+![enter description here](./images/1551777539552.png)
+格式化显示
+![enter description here](./images/1551777562923.png)
+
+-  显示日历的指令： cal
+![enter description here](./images/1551777629239.png)
+![enter description here](./images/1551777612560.png)
+![enter description here](./images/1551777644970.png)
+
+- 简单好用的计算机： bc
+![enter description here](./images/1551777673177.png)
+![enter description here](./images/1551777723855.png)
+
+![enter description here](./images/1551777744494.png)
+要输出小数，则要执行scale=number, number表示小数位数。
+![enter description here](./images/1551777808682.png)
+
+
