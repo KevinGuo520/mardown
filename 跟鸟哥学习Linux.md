@@ -5,7 +5,7 @@ grammar_cjkRuby: true
 ---
 
 ### linux 开机过程
-> BIOS就是在开机的时候，计算机系统会主动执行的第一个程序了;BIOS会依据使用者的设置去取得能够开机的硬盘，并且到该硬盘里面去读取第一个扇区的MBR位置。 MBR这个仅有446 Bytes的硬盘容量里面会放置最基本的开机管理程序，***这个开机管理程序的目的是在载入（load）核心文件*
+> BIOS就是在开机的时候，计算机系统会主动执行的第一个程序了;BIOS会依据使用者的设置去取得能够开机的硬盘，并且到该硬盘里面去读取第一个扇区的MBR位置。 MBR这个仅有446 Bytes的硬盘容量里面会放置最基本的开机管理程序，**这个开机管理程序的目的是在载入（load）核心文件**
 
 > 1.  BIOS：开机主动执行的固件，会认识第一个可开机的设备；
 > 2. MBR：第一个可开机设备的第一个扇区内的主要开机记录区块，内含开机管理程序；
@@ -44,8 +44,8 @@ grammar_cjkRuby: true
 > 如前所述，如果磁盘容量小于 2TB 的话，系统默认会使用 MBR 模式来安装！鸟哥的虚拟机仅有 40GB 的磁盘容量，所以
 默认肯定会用 MBR 模式来安装的啊！那如果想要强制使用 GPT 分区表的话，你就得要这样作：
 
-> 1. 使用方向键，将下图的光标移动到“ Install CentOS 7 ”的项目中
-> 2. 按下键盘的 [Tab] 按钮，让光标跑到画面最下方等待输入额外的核心参数
+> 1. 使用方向键，将下图的光标**移动到“ Install CentOS 7 ”的项目中**
+> 2. **按下键盘的 [Tab] 按钮**，让光标跑到画面最下方等待输入额外的核心参数
 > 3. 在出现的画面中，输入如下画面的数据 （注意，各个项目要有空格，最后一个是光标本身而非底线）
 > 
 其实重点就是输入“ **inst.gpt** ”这个关键字！
@@ -83,3 +83,29 @@ grammar_cjkRuby: true
 大，自然不需要swap啰。
 
 ![enter description here](./images/1551715757223.png)
+![enter description here](./images/1551748847539.png)
+> 提醒你是否要真的进行这样的分区与格式化
+![enter description here](./images/1551748887152.png)
+> 可以发现方框圈起来的地方，删除了 MSDOS 而创建了 GPT 
+
+##### 核心管理与网络设置
+> 点选“系统”下的“KDUMP”项目，这个项目主要在处理，当 Linux 系统因为核心问题导致的死机事
+件时， 会将该死机事件的内存内数据储存出来的一项特色！
+
+![enter description here](./images/1551749035459.png)
+![enter description here](./images/1551749064930.png)
+> 这边使用的是虚拟机，因此看到的网卡就会是旧式的 eth0 之类的网卡代号。如果是实体网卡，那你可能会看到类似 p1p1, em1 等等比较特殊的网卡代号！
+
+![enter description here](./images/1551749144954.png)
+![enter description here](./images/1551749176643.png)
+![enter description here](./images/1551749198447.png)
+
+如果一切顺利的话，那么你应该就可以看到如下的图示，所有的一切都是正常的状态！因此你就可以按下下面图示的箭头部份， 开始安装的流程啰！
+
+![enter description here](./images/1551749262428.png)
+
+![enter description here](./images/1551749374268.png)
+![enter description here](./images/1551749389502.png)
+![enter description here](./images/1551749441710.png)
+> 刚刚上面所选择的项目，包括 root 的密码等等，通通都会被纪录到 /root/anaconda-ks.cfg 这个文件内
+> 
