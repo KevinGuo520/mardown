@@ -197,4 +197,25 @@ Tips:
 要输出小数，则要执行scale=number, number表示小数位数。
 ![enter description here](./images/1551777808682.png)
 
+- ctrl + c
+	终止当前指令
+- ctrl + d
+输入结束，相当于exit
 
+- shift + pgup/ pgdown
+上下翻页
+
+- 数据同步写入磁盘： sync
+由于硬盘的速度太慢（相对于内存来说），如果常常让数据在
+内存与硬盘中来回写入/读出，系统的性能就不会太好。
+因此在Linux系统中，为了加快数据的读取速度，所以在默认的情况中， 某些已经载入内存中的数据将不会直接被写回硬盘，而是先暂存在内存当中。
+![enter description here](./images/1551876669383.png)
+
+- 惯用的关机指令： shutdown
+![enter description here](./images/1551876766658.png)
+> 单纯执行 shutdown 之后， 系统默认会在 1 分钟后进行“关机”的动作喔！
+
+![enter description here](./images/1551876899355.png)
+
+- 重新开机，关机： reboot, halt, poweroff
+![enter description here](./images/1551877681320.png)
