@@ -219,3 +219,47 @@ Tips:
 
 - 重新开机，关机： reboot, halt, poweroff
 ![enter description here](./images/1551877681320.png)
+
+#### 改变文件属性与权限\
+- chgrp  改变文件所属群组
+- chown 改变文件拥有者
+> 复制行为（cp）会复制执行者的属性与权限
+- chmod 改变文件权限
+> r:4  w:2  x:1
+![enter description here](./images/1551960853664.png)
+![enter description here](./images/1551960975158.png)
+
+> u: user
+> g: group
+> o: other
+> a: all
+![enter description here](./images/1551961282742.png)
+![enter description here](./images/1551961386775.png)
+![enter description here](./images/1551961493052.png)
+![enter description here](./images/1551961504370.png)
+
+**注意:**
+在Windows下面一个文件是否具有执行的能力是借由“ 扩展名 ”来判断的， 
+例如：.exe, .bat, .com 等等，但是在Linux下面，我们的文件是否能被执行，则是借由是否具有“x”这个权限来决定的！跟文件名是没有绝对的关系的！
+
+> **w** 并不具备有删除该文件本身的权限！
+> **目录**的**x**代表的是使用者能否进入该目录成为工作目录
+> ![enter description here](./images/1551961748410.png)
+
+![enter description here](./images/1551961824753.png)
+
+**注意:**
+要开放目录给任何人浏览时，应该至少也要给予r及x的权限，但w 权限不可随便给！
+![](./images/1551961972303.png)
+
+#### 使用者操作功能与权限
+刚刚讲这样如果你还是搞不懂～没关系，我们来处理个特殊的案例！假设两个文件名，分别是下面这样：
+- /dir1/file1
+- /dir2
+针对 /dir1, /dir1/file1, /dir2 这三个文件名来说，分别需要“哪些最小的权限”才能达成各项任务？
+![enter description here](./images/1551962587910.png)
+> **r** 是非必备的！只是，没有 r 的话，使用 [tab] 时，他就无法自动帮你补齐文件名了！
+
+**Linux文件扩展名：**
+基本上，Linux的文件是没有所谓的“扩展名”的，我们刚刚就谈过，一个Linux文件能不能被执行，与他的第一栏的十个属性有关， 与文件名根本一点关系也没有。这个观念跟Windows的情况不相同喔！在Windows下面， 能被执行的文件扩展名通常是.com .exe .bat等等，而在Linux下面，只要你的权限当中具有x的话，例如[ -rwxr-xr-x ] 即代表这个文件具有可以被执行的能力喔！
+
